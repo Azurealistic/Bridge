@@ -1,0 +1,116 @@
+%% Title and Preprocessing
+\documentclass[titlepage]{article}\pagestyle{empty}
+\usepackage{amsmath}
+
+\author{Muhammad Asavir}
+\title{Homework \#7}
+\date{\today}
+\usepackage[left=1cm, right=2cm, vmargin=1cm]{geometry}
+\usepackage{amsfonts}
+
+\def\therefore{\boldsymbol{\text{ }
+\leavevmode
+\lower0.4ex\hbox{$\cdot$}
+\kern-.5em\raise0.7ex\hbox{$\cdot$}
+\kern-0.55em\lower0.4ex\hbox{$\cdot$}
+\thinspace\text{ }}}
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% Start Document Here
+\begin{document}
+\maketitle
+
+\pagebreak
+\section*{Q3.}
+\subsection*{Part A: 8.2.2}
+\subsubsection*{b.} 
+So we need to prove that $f = O(n^3)$ and $f = \Omega(n^3)$ in order to prove that $f = \Theta(n^3)$.\\
+Proof of $f = O(g)$:
+\begin{center}
+$f(n) = n^3 + 3n^2 + 4$\\
+$g(n) = n^3$\\~\\
+Select $c = 8$ and $n_0 = 1$. We will show that for any $n \geq 1$, $f(n) \leq c * g(n).$\\
+For $n \geq 1$, We know that $n \leq n^2 \leq n^3$: \\
+$f(n) = n^3 + 3n^2 + 4 \leq f(n) = n^3 + 3n^2 + 4n^3$\\
+$f(n) = n^3 + 3n^2 + 4 \leq f(n) = 8n^3 = 8 * g(n)$\\
+Therefore we have proof that: $f \leq 8 * g(n)$ and as such $f = O(g)$.
+\end{center}
+Proof of $f = \Omega(g)$:
+\begin{center}
+$f(n) = 5n^3 + 2n^2 + 3n$\\
+$g(n) = n^3$\\~\\
+Select $c = 1$ and $n_0 = 1$. We will show that for any $n \geq 1$, $f(n) \geq c * g(n).$\\
+For $n \geq 1$, We know that $n \geq 1, 3n^2 + 4 \geq 0$: \\
+If we add $n^3$ to both sides we get that:\\
+$n^3 + 3n^2 + 4 \geq n^3 = n^3 + 3n^2 + 4 \geq 1 * g(n)$.\\
+Therefore we have proof that: $f \geq 1 * g(n)$ and as such $f = \Omega(g)$.\\
+\end{center}
+
+Since we proved both $f = O(n^3)$ and $f = \Omega(n^3)$, we have proved that $f = \Theta(n^3)$.
+
+\subsection*{Part B: 8.3.5}
+\subsubsection*{a.} It is executing the inner and outer loops while $i < j$ and it means that it will go through all the numbers in the array, increasing $i$ and decreasing $j$ as it goes on, then if the requirement for a swap is met, it will swap values at both indexes.
+\subsubsection*{b.} The maximum amount that one of these statements can execute is $n - 1$ times. However this is also the cap for both of the two statements combined, so it will never be more than this, but it can be lower than this limit. Which line is called at a given time is dependent on the values in the array and the pivot.
+\subsubsection*{c.} The swap also depends on the values in the sequence, it is minimized when the list is sorted and the pivot is less than all elements in the list. Then there is at most 1 swap. And the maximum swaps are going to be same as the limit of part b, meaning there is gonna be $n - 1$ swaps at most.
+\subsubsection*{d.} I think that the time complexity will be $\Omega(n)$.
+\subsubsection*{e.} I think that the time complexity will be $O(n)$.
+
+\pagebreak
+\section*{Q4.}
+\subsection*{Part A: 5.1.1}
+\subsubsection*{b.} $40^9 + 40^8 + 40^7$
+\subsubsection*{c.} $14 * (40^8 + 40^7 + 40^6)$
+\subsection*{Part B: 5.3.2}
+\subsubsection*{a.} $2^9 * 3$
+\subsection*{Part C: 5.3.3}
+\subsubsection*{b.} $10 * 9 * 8 * 26^4$
+\subsubsection*{c.} $10 * 9 * 8 * 26 * 25 * 24 * 23$
+\subsection*{Part D: 5.2.3}
+\subsubsection*{a.}
+We know that $\vert B^9\vert = 2^9$ and since we have 2 options per digit of the string, then an even number of $1$s in sets $E_n$ add up to half of all strings of length $n$. Which means that $\vert E_n\vert = \vert B^n\vert/2$. Thus $\vert E_{10}\vert=\vert B^9\vert/2=512$ therefore it is a bijection.
+\subsubsection*{b.} $\vert E_{10}\vert=2^9$
+
+\pagebreak
+\section*{Q5.}
+\subsection*{Part A: 5.4.2}
+\subsubsection*{a.} $10^4 * 2$
+\subsubsection*{b.} $10 * 9 * 8 * 7 * 2$
+\subsection*{Part B: 5.5.3}
+\subsubsection*{a.} $2^{10}$
+\subsubsection*{b.} $2^7$
+\subsubsection*{c.} $2^7 + 2^8$
+\subsubsection*{d.} $2^8$
+\subsubsection*{e.} $\binom{10}{6}$
+\subsubsection*{f.} $\binom{9}{6}$
+\subsubsection*{g.} $\binom{5}{1}\binom{5}{3}$
+\subsection*{Part C: 5.5.5}
+\subsubsection*{a.} $\binom{30}{10}\binom{35}{10}$
+\subsection*{Part D: 5.5.8}
+\subsubsection*{c.} $\binom{26}{5}$ 
+\subsubsection*{d.} There are $4$ of each card rank, and $13$ ranks, which means that we have $1 * 13 = 13$ and then remaining cards are $48$ so we have $13*48$ possibilities.
+\subsubsection*{e.} $13 * 12 * \binom{4}{2} * \binom{4}{3}$
+\subsubsection*{f.} $\binom{13}{5}*4^5$
+\subsection*{Part E: 5.6.6}
+\subsubsection*{a.} $\binom{44}{5}\binom{56}{5}$
+\subsubsection*{b.} $P(44, 2) * P(56, 2)$
+
+\pagebreak
+\section*{Q6.}
+\subsection*{Part A: 5.7.2}
+\subsubsection*{a.} $\binom{52}{5}-\binom{39}{5}$
+\subsubsection*{b.} $\binom{52}{5}-(\binom{13}{5}*4^5)$
+\subsection*{Part B: 5.8.4}
+\subsubsection*{a.} $5^{20}$
+\subsubsection*{b.} $\binom{20}{4}\binom{16}{4}\binom{12}{4}\binom{8}{4}$
+
+\pagebreak
+\section*{Q7.}
+\subsection*{Part A:} $0$
+\subsection*{Part B:} $P(5, 5)$
+\subsection*{Part C:} $P(6, 5)$
+\subsection*{Part D:} $P(7, 5)$
+
+\end{document}
