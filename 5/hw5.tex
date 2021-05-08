@@ -1,0 +1,89 @@
+%% Title and Preprocessing
+\documentclass[titlepage]{article}\pagestyle{empty}
+\usepackage{amsmath}
+
+\author{Muhammad Asavir}
+\title{Homework \#5}
+\date{\today}
+\usepackage[left=1cm, right=2cm, vmargin=1cm]{geometry}
+\usepackage{amsfonts}
+
+\def\therefore{\boldsymbol{\text{ }
+\leavevmode
+\lower0.4ex\hbox{$\cdot$}
+\kern-.5em\raise0.7ex\hbox{$\cdot$}
+\kern-0.55em\lower0.4ex\hbox{$\cdot$}
+\thinspace\text{ }}}
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% Start Document Here
+\begin{document}
+\maketitle
+
+\pagebreak
+\section*{Q3.} Solve the following sections from the Discrete Math zyBook:
+\subsection*{Part A: Exercise 4.1.3} 
+\subsubsection*{B.} Not a function because it fails for $x = 2$ and $x = -2$.
+\subsubsection*{C.} Is a function for all of $\mathbb{R}$.
+\subsection*{Part A: Exercise 4.1.5} 
+\subsubsection*{B.} 
+$\{4,9,16,25\}$
+\subsubsection*{D.}
+Will contain all numbers between $\{00000\}$ and $\{11111\}$, thus it will be range of $\{0, 1, 2, 3, 4, 5\}$
+\subsubsection*{H.} 
+Cartesian product will be the same regardless of order of $x$ and $y$ here because it is always $A \times A$. Thus $A \times A = \{(1,1),(1,2),(1,3),(2,1),(2,2),(2,3),(3,1),(3,2),(3,3)\}$.
+\subsubsection*{I.} 
+We can use the Cartesian product from part H, and then the function is $f(x, y) = (x, y+1)$ so every element in the result from H has the second element of the pair increased by 1.\\Thus $A \times A = \{(1,2),(1,3),(1,4),(2,2),(2,3),(2,4),(3,2),(3,3),(3,4)\}$.
+\subsubsection*{L.} 
+Start with $P(A)$ and then apply function to remove every thing that has $1$ as an element to get: $\{\emptyset, \{2\}, \{3\}, \{2, 3\}\}.$
+
+\pagebreak
+\section*{Q4.}
+\subsection*{I - Solve the following sections from the Discrete Math zyBook} 
+\subsubsection*{Part A: 4.2.2}
+C. One to one but not onto, since it is integers, you will never get certain numbers, such as $2$ and $3$.\\
+G. This is one to one but not onto, since it will map singular to singular, but not onto everything. \\
+K. Neither one to one or onto, for example $(x,y)$ pairs of $(3,2)$ and $(2, 6)$ both give a result of 10. If you do $f(1, 1)$ you get a value of 3. Thus can never get below that value.
+\subsubsection*{Part B: 4.2.4}
+B. Neither one to one or onto, for example $f(100) = f(000) = 100$. And also that if $f(x) = 000$ we know that this is isn't possible as no such $x$ exists.\\
+C. Both one to one and onto.\\
+D. One to one but not onto, example being $f(x) = 0000$, there is no such $x$ that makes this true.\\
+G. Neither one to one or onto. If we have both $f(1,2)$ and $f(2)$ we never produce the result of $\{2\}$.
+\subsection*{II - Give an example of a function from the set of integers to the set of positive integers that is: }  
+\subsubsection*{Part A:}
+Example is: $f(x) = 2x$ for $x >= 0$ and $2|x|+1$ for $x < 0$.
+\subsubsection*{Part B:}
+Example is: $f(x) = |x|$.
+\subsubsection*{Part C:}
+Example is $f(x) = 2x$ for $x >= 0$ and $2|x|-1$ for $x < 0$.
+\subsubsection*{Part D:}
+Example is $f(x) = 42$. Answer to the Ultimate Question of Life, the Universe, and Everything! And also an example for this problem!
+
+\pagebreak
+\section*{Q5.} Solve the following sections from the Discrete Math zyBook:
+\subsection*{Part A: Exercise 4.3.2} 
+\subsubsection*{C.} This function is well defined. Thus $f^{-1}(x)=\frac{x-3}{2}$.
+\subsubsection*{D.} $f(x)$ is not one to one so $f^{-1}(x)$ is not well defined.
+\subsubsection*{G.} $f(x)$ and $f^{-1}(x)$ are both well defined, and both reverse the input's 3 bits. 
+\subsubsection*{I.} $f^{-1}(x,y) = (x - 5, y+2)$ and it is well defined.
+\subsection*{Part B: Exercise 4.4.8}
+\subsubsection*{C.} $f \circ h(x) = 2x^2 + 5$
+\subsubsection*{D.} 
+$h \circ f(x) = (2x + 3)^2 + 1$\\
+$h \circ f(x) = 4x^2 + 12x + 10$
+\subsection*{Part C: Exercise 4.4.2}
+\subsubsection*{B.} 
+$f \circ h(52) = (\ceil*{52/5})^2 =  11^2 = 121$
+\subsubsection*{C.} 
+$g \circ h \circ f(4) = 2^{(\ceil*{(4^2)/5})} = 2^{(\ceil*{(16/5})} = 2^4 = 16$
+\subsubsection*{D.} 
+$h(f(x))=\ceil*{\frac{x^2}{5}}$
+\subsection*{Part C: Exercise 4.4.6}
+\subsubsection*{C.} $h(f(010))=111$
+\subsubsection*{D.} Range is $\{101, 111\}$. Get it by plugging in values into $h \circ f(x)$.
+\subsubsection*{E.} Range is $\{001, 011, 101, 111\}$.
+
+\end{document}
