@@ -1,0 +1,85 @@
+%% Title and Preprocessing
+\documentclass[titlepage]{article}\pagestyle{empty}
+\usepackage{amsmath}
+
+\author{Muhammad Asavir}
+\title{Homework \#6}
+\date{\today}
+\usepackage[left=1cm, right=2cm, vmargin=1cm]{geometry}
+\usepackage{amsfonts}
+
+\def\therefore{\boldsymbol{\text{ }
+\leavevmode
+\lower0.4ex\hbox{$\cdot$}
+\kern-.5em\raise0.7ex\hbox{$\cdot$}
+\kern-0.55em\lower0.4ex\hbox{$\cdot$}
+\thinspace\text{ }}}
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% Start Document Here
+\begin{document}
+\maketitle
+
+\pagebreak
+\section*{Q5.}
+\subsection*{Part A: $5n^3 + 2n^2 + 3n = \Theta(n^3)$}
+So we need to prove that $f = O(g)$ and $f = \Omega(g)$ in order to prove that $f = \Theta(g)$.\\
+Proof of $f = O(g)$:
+\begin{center}
+$f(n) = 5n^3 + 2n^2 + 3n$\\
+$g(n) = n^3$\\~\\
+Select $c = 10$ and $n_0 = 1$. We will show that for any $n \geq 1$, $f(n) \leq c * g(n).$\\
+For $n \geq 1$, We know that $n \leq n^2 \leq n^3$: \\
+$f(n) = 5n^3 + 2n^2 + 3n \leq f(n) = 5n^3 + 2n^3 + 3n^3$\\
+$f(n) = 5n^3 + 2n^3 + 3n^3 \leq f(n) = 10n^3 = 10 * g(n)$\\
+Then if we merge the inequalities we get that:\\
+$f(n) = 5n^3 + 2n^2 + 3n \leq 10n^3 = 10 * g(n)$\\
+Therefore we have proof that: $f \leq 10 * g(n)$ and as such $f = O(g)$.
+\end{center}
+Proof of $f = \Omega(g)$:
+\begin{center}
+$f(n) = 5n^3 + 2n^2 + 3n$\\
+$g(n) = n^3$\\~\\
+Select $c = 5$ and $n_0 = 1$. We will show that for any $n \geq 1$, $f(n) \geq c * g(n).$\\
+For $n \geq 1$, We know that $n \geq 1, 2n^2 + 3n \geq 0$: \\
+If we add $5n^3$ to both sides we get that:\\
+$5n^3 + 2n^2 + 3n \geq 5n^3 = 5n^3 + 2n^2 + 3n \geq 5 * g(n)$.\\
+Therefore we have proof that: $f \geq 5 * g(n)$ and as such $f = \Omega(g)$.\\
+\end{center}
+
+Since we proved both $f = O(g)$ and $f = \Omega(g)$, we have proved that $f = \Theta(g)$.
+
+\subsection*{Part B: $\sqrt{7n^2 + 2n - 8} = \Theta(n)$}
+So we need to prove that $f = O(g)$ and $f = \Omega(g)$ in order to prove that $f = \Theta(g)$.\\
+Proof of $f = O(g)$:
+\begin{center}
+$f(n)\sqrt{7n^2 + 2n - 8}$\\~\\
+Select $c = 10$ and $n_0 = 1$. We will show that for any $n \geq 1$, $f(n) \leq c * g(n).$\\
+If we have $f(n)$ as above then we know that the following is true:\\
+$7n^2 + 2n - 8 \leq 7n^2 + 2n^2 = 7n^2 + 2n - 8 \leq 9n^2$\\
+Since square root is an increasing function, we can take square root of both sides, in order to get our $f(n)$\\
+We can then take our $c * g(n)$ as $\sqrt{9n^2} = 3n$.\\
+Since we already showed that $7n^2 + 2n - 8 \leq 9n^2$ it follows that $\sqrt{7n^2 + 2n - 8} \leq 3n$.\\
+Which means that $f(n) \leq 3 * n$.\\
+Therefore we have proof of $f = O(g)$.
+
+\end{center}
+Proof of $f = \Omega(g)$:
+\begin{center}
+$f(n) = \sqrt{7n^2 + 2n - 8}$\\
+$g(n) = \sqrt{7n^2}$\\~\\
+Select $c = 2$ and $n_0 = 4$. We will show that for any $n \geq 4$, $f(n) \geq c * g(n).$\\
+We know that since $f(n)$ has to be greater than $g(n)$ then we can take out terms in order to guarantee that.\\
+So if $f(n)=\sqrt{7n^2 + 2n - 8}$ then we know that $7n^2 \geq 7n^2$ and $2n \geq 2n$ and $0 \geq -8$.\\
+Using that we can create $g(n) = \sqrt{7n^2}$.\\
+Since $2n - 8 \geq 0$ therefore $n \geq 4$.\\ 
+Since we want the bound to be less than $\sqrt{7}$ so we round down to $c = 2$.\\
+Therefore we have proof that $f = \Omega(g)$.
+\end{center}
+
+Since we proved both $f = O(g)$ and $f = \Omega(g)$, we have proved that $f = \Theta(g)$.
+
+\end{document}
