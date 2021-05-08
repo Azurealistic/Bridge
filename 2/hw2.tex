@@ -1,0 +1,273 @@
+%% Title and Preprocessing
+\documentclass[titlepage]{article}\pagestyle{empty}
+\usepackage{amsmath}
+
+\author{Muhammad Asavir}
+\title{Homework \#2}
+\date{\today}
+\usepackage[left=1cm, right=2cm, vmargin=1cm]{geometry}
+
+\def\therefore{\boldsymbol{\text{ }
+\leavevmode
+\lower0.4ex\hbox{$\cdot$}
+\kern-.5em\raise0.7ex\hbox{$\cdot$}
+\kern-0.55em\lower0.4ex\hbox{$\cdot$}
+\thinspace\text{ }}}
+
+% Start Document Here
+\begin{document}
+\maketitle
+
+\pagebreak
+\section*{Question 5:}
+Solve the following questions from the Discrete Math zyBook.
+\subsection*{Part A.}
+\subsection*{Exercise 1.12.2:}
+\subsubsection*{Section B:}
+\begin{displaymath}
+\begin{array}{c c c}
+1. & \neg q & Hypothesis\\
+2. & \neg q \lor \neg r & Addition\ (1)\\
+3. & \neg (q \land r) & De\ Morgan\ (2)\\
+4. & p \to (q \land r) & Hypothesis\\
+5. & \neg p & Modus\ Tollens\ (3, 4)
+\end{array}
+\end{displaymath}
+\subsubsection*{Section E:}
+\begin{displaymath}
+\begin{array}{c c c}
+1. & p \lor q & Hypothesis\\
+2. & \neg q & Hypothesis\\
+3. & p & Disjunctive\ Syllogism\ (1, 2)\\
+4. & \neg p \lor r & Hypothesis\\
+5. & r & Disjunctive\ Syllogism\ (3, 4)
+\end{array}
+\end{displaymath}
+\subsection*{Exercise 1.12.3:}
+\subsubsection*{Section C:}
+\begin{displaymath}
+\begin{array}{c c c}
+1. & p \lor q & Hypothesis\\
+2. & \neg p & Hypothesis\\
+3. & \neg p \land (p \lor q) & Conjunction\ (1,2)\\
+4. & (\neg p \land p) \lor (\neg p \land q) &Distributive\ (3)\\
+5. & F \lor (\neg p \land q) & Complement\ (4)\\
+6. & \neg p \land q & Identity\ (5)\\
+7. & q & Simplification\ (6)
+\end{array}
+\end{displaymath}
+\pagebreak
+\subsection*{Exercise 1.12.5:}
+For this we can make three statements, as in the examples from sections (a) and (b).\\
+j: I will get a job\\
+c: I will buy a new car\\
+h: I will buy a new house
+\subsubsection*{Section C:}
+The form of the argument is:
+\begin{displaymath}
+\begin{array}{c}
+(c \land h) \to j\\
+\neg j\\
+\hline
+\therefore \neg c
+\end{array}
+\end{displaymath}
+This argument is invalid, if we do the truth table we can see that the fourth line invalidates it:
+\begin{displaymath}
+\begin{array}{|c c c|c|c|c|}
+\hline
+c & h & j & (c \land h) \to j & \neg j & \neg c\\
+\hline
+T & T & T & F & F & F\\
+T & T & F & T & T & F\\
+T & F & T & T & F & F\\
+T & F & F & T & T & F\\
+F & T & T & T & F & T\\
+F & T & F & T & T & T\\
+F & F & T & T & F & T\\
+F & F & F & T & T & T\\
+\hline
+\end{array}
+\end{displaymath}
+\subsubsection*{Section D:}
+The form of the argument is:
+\begin{displaymath}
+\begin{array}{c}
+(c \land h) \to j\\
+\neg j\\
+h\\
+\hline
+\therefore \neg c
+\end{array}
+\end{displaymath}
+This argument is valid because of $c = j = F$ and $h = T$, all three hypothesis are true and the conclusion is true.
+
+\pagebreak
+\subsection*{Part B.}
+\subsection*{Exercise 1.13.3:}
+\subsubsection*{Section B:}
+The form of the argument is:
+\begin{displaymath}
+\begin{array}{c}
+\exists_x (P(x) \lor Q(x))\\
+\exists_x \neg Q(x)\\
+\hline
+\therefore \exists_x P(x)
+\end{array}
+\end{displaymath}
+We can make a truth table for this and check:
+\begin{displaymath}
+\begin{array}{|c|c|}
+\hline
+P(x) & Q(x)\\
+\hline
+F & F\\
+F & T\\
+\hline
+\end{array}
+\end{displaymath}
+We can see that the if $P(x)$ is false, and $Q(x)$ is true, then $\exists_x (P(x) \lor Q(x))$ is true and we also see if both $P(x)$ and $Q(x)$ are both false, then $\exists_x \neg Q(x)$ is true. However the statement $\exists_x P(x)$ is false in both, and therefore this argument is invalid.
+\subsection*{Exercise 1.13.5:}
+The domain for each problem is the set of students in a class.
+\subsubsection*{Section D:}
+The two equations for this:\\
+$M(x)$: $x$ missed class.\\
+$D(x)$: $x$ got a detention.\\~\\
+We can set up equations for this as:
+\begin{displaymath}
+\begin{array}{c}
+\forall_x (M(x) \to D(x))\\
+\neg M(Penelope)\\
+\hline
+\therefore \neg D(Penelope)
+\end{array}
+\end{displaymath}
+This argument is invalid when $M(Penelope) = T$ and $D(Penelope) = F$, as the first hypothesis is thus false, but the conclusion is true due to universal instantiation.
+\subsubsection*{Section E:}
+We can set up equations for this as, we also define $A(x)$ in addition to above to indicate if $x$ got an A.
+\begin{displaymath}
+\begin{array}{c}
+\forall_x (M(x) \lor D(x)) \to \neg A\\
+Penelope\ is\ a\ student.\\
+A(p)\\
+\hline
+\therefore \neg D(Penelope)
+\end{array}
+\end{displaymath}
+This is valid and we can use the rules of inference to prove it:
+\begin{displaymath}
+\begin{array}{c c c}
+1. & \forall_x (M(x) \lor D(x)) \to \neg A & Hypothesis\\
+2. & Penelope\ is\ a\ student. & Hypothesis\\ 
+3. & M(p) \lor D(p) \to \not A(p) & Universal\ Instillation\ (1,2)\\
+4. & (\neg((M(p) \lor D(p))) \lor \not A(p) & Conditional\ Identity\ (3)\\
+5. & (\neg(M(p) \land \neg(D(p)) \lor \neg A(p) & De\ Morgan\ (4)\\
+6. & \neg A(p) \lor (\neg M(p) \land \neg D(P)) & Commutative\ Law\ (5)\\
+7. & A(p) \to (\neg M(p) \land \neg D(p)) & Conditional\ Identity\ (6)\\
+8. & A(p) & Hypothesis\\
+9. & \neg M(p) \land \neg D(p) & Modus\ Ponens\ (7, 8)\\ 
+10. & \neg D(p) \land \neg M(p) & Commutative\ (9)\\ 
+11. & \neg D(p) & Simplification\ (10)
+\end{array}
+\end{displaymath}
+
+\pagebreak
+\section*{Question 6:}
+Solve the following questions from the Discrete Math zyBook.
+\subsection*{Exercise 2.2.1:}
+\subsubsection*{C.}
+\textit{If $x$ is a real number and $x \le 3$, then $12 - 7x + x^2 \geq 0$.}
+\begin{displaymath}
+\begin{array}{c c}
+x \le 3 & Hypothesis\\
+x - x \le 3 - x = 0 \le 3 - x & Subtract\ x\\
+0 \le 3 -x\ and\ 0 \le 4 - x & If\ left\ one\ is\ true,\ so\ is\ right.\\
+(3 - x)(4 - x)\ge 0 & Expand\ this\ out\ to\ get\ the\ following.\\
+12 - 7x + x^2 \geq 0 &\\
+\end{array}
+\end{displaymath}
+\subsubsection*{D.}
+\textit{The product of two odd integers is an odd integer.}\\
+Assume that both $x$ and $y$ are both odd integers. Because $x$ and $y$ are both odd, then having two integers $a$ and $b$ then $x = 2a + 1$ and $y = 2b + 1$. Then we can see that:
+\begin{displaymath}
+\begin{array}{c}
+xy = (2a + 1)(2b + 1)\\
+xy = 2(2ab + a + b) + 1
+\end{array}
+\end{displaymath}
+Because any number divided by $2$ is even, then $2(2ab + a + b)$ is even. So adding $1$ to this must make $xy$ odd.
+
+\pagebreak
+\section*{Question 7:}
+Solve the following questions from the Discrete Math zyBook.
+\subsection*{Exercise 2.3.1:}
+\subsubsection*{D.}
+\textit{For every integer $n$, if $n^2 - 2n + 7$ is even, then n is odd.}\\
+Assuming that $n$ is even, we can represent every even $n$ as $2k$, where $k$ is any arbitrary integer. Then it follows that:
+\begin{displaymath}
+\begin{array}{c}
+n^2 - 2n + 7 = (2k)^2 - 2(2k) + 7\\
+n^2 - 2n + 7 = 2(2k^2 - 2k) + 7
+\end{array}
+\end{displaymath}
+Because $k$ is an integer then $2(2k^2 - 2k)$ is an even integer. Therefore adding $7$ to that makes it an odd integer. Hence it proves the theorem, when $n$ is even, the equation is odd, so the contrapositive must be true, in that the equation is odd when the $n$ is odd.
+\subsubsection*{F.}
+\textit{For every non-zero real number $x$, if $x$ is irrational, then $\frac{1}{x}$ is also irrational.}\\
+Assume that $\frac{1}{x}$ is rational and $x$ is nonzero. There must then be integers $a$ and $b$ where $\frac{1}{x} = \frac{a}{b}$. Then cross multiplying we have:
+\begin{displaymath}
+\begin{array}{c}
+b = ax\\
+x = \frac{b}{a}
+\end{array}
+\end{displaymath}
+$x$ is in the form of a rational number. Therefore the theorem is true due to the contrapositive, since $x$ is irrational, the reciprocal is also irrational.
+\subsubsection*{G.}
+ \textit{For every pair of real numbers $x$ and $y$, if $x^3 + xy^2 \le x^2y + y^3$, then $x \le y$.}\\
+We assume that $x > y$, therefore $x^3 > x^{2}y$ and $xy^2 > y^3$. If we add these two statements up, we obtain that $x^3 + xy^2 > x^{2}y + y^3$. Which proves the theorem by being the contrapositive.
+\subsubsection*{L.}
+\textit{For every pair of real numbers $x$ and $y$, if $x + y > 20$, then $x > 10$ or $y > 10$.}\\
+Assume that when $x \le 10$ and $y \le 10$ then $x + y \le 20$. Then we assume that $x = y = 10$. Thus it follows that:
+\begin{displaymath}
+\begin{array}{c}
+x + y \le 20\\
+10 + 10 \le 20\\
+20 \le 20
+\end{array}
+\end{displaymath}
+Which ends up being true, therefore the theorem is true due to the contrapositive.
+
+\pagebreak
+\section*{Question 8:}
+Solve the following questions from the Discrete Math zyBook.
+\subsection*{Exercise 2.4.1:}
+\subsubsection*{C. \textit{The average of three real numbers is greater than or equal to at least one of the numbers.}}
+Proving this by contradiction, we can assume that there are three real numbers, $x$, $y$ and $z$ such that the average of the them is less than each of the 3 numbers. So we have: $(x + y + z)/3 < x$, $(x + y + z)/3 < y$, $(x + y + z)/3 < z$. Adding up the three equations together, we have: $(x + y + z) < x + y + z$, which cannot be true, since a number cannot be less than itself, therefore the theorem must be true.
+
+\subsubsection*{E. \textit{There is no smallest integer.}}
+Proving this by contradiction, let us assume there is a smallest integer and we will call it $n$. If $n$ is the smallest integer, then nothing can be smaller/lesser than it. If we subtract $1$ from an integer, we also get an integer. Then we get that there must exist an integer $n - 1$ and we know that $n - 1 < n$, therefore we know that there is no integer $n$ smaller than itself less one. Therefore the theorem must be true.
+
+\pagebreak
+\section*{Question 9:}
+Solve the following questions from the Discrete Math zyBook.
+\subsection*{Exercise 2.5.1:}
+\subsubsection*{Section C:} If integers x and y have the same parity, then x + y is even. The parity of a number tells whether the number is odd or even. If x and y have the same parity, they are either both even or both odd.
+\subsubsection*{\textbf{Case 1: Even Integers}}
+If we assume both $x$ and $y$ are both even, then integers $a$ and $b$ exist such that $x = 2a$ and $y = 2b$. Therefore:
+\begin{displaymath}
+\begin{array}{c}
+x + y = 2a + 2b\\
+x + y = 2(a + b)
+\end{array}
+\end{displaymath}
+Because all integers when multiplied by $2$ are even, then $x + y$ is also even, since that is equal to $2(a + b)$.
+\subsubsection*{\textbf{Case 2: Odd Integers}}
+If we assume both $x$ and $y$ are both odd, then integers $a$ and $b$ exist such that $x = 2a + 1$ and $y = 2b + 1$. Therefore:
+\begin{displaymath}
+\begin{array}{c}
+x + y = 2a + 2b + 1 + 1\\
+x + y = 2a + 2b + 2\\
+x + y = 2(a + b + 1)
+\end{array}
+\end{displaymath}
+Because all integers when multiplied by $2$ are even, then $x + y$ is also even, since that is equal to $2(a + b + 1)$.
+\end{document}
