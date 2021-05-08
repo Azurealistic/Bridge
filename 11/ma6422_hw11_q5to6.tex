@@ -1,0 +1,96 @@
+%% Title and Preprocessing
+\documentclass[titlepage]{article}\pagestyle{empty}
+\usepackage{amsmath}
+
+\author{Muhammad Asavir}
+\title{Homework \#11}
+\date{\today}
+\usepackage[left=1cm, right=2cm, vmargin=1cm]{geometry}
+\usepackage{amsfonts}
+
+\def\therefore{\boldsymbol{\text{ }
+\leavevmode
+\lower0.4ex\hbox{$\cdot$}
+\kern-.5em\raise0.7ex\hbox{$\cdot$}
+\kern-0.55em\lower0.4ex\hbox{$\cdot$}
+\thinspace\text{ }}}
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% Start Document Here
+\begin{document}
+\maketitle
+
+\pagebreak
+\section*{Q5.}
+\subsection*{a.}
+We need to prove that for any given positive integer $n$, the number $3$ fully divides $n^3 + 2n$ without a remainder. So to do this using induction we use the following approach:\\~\\
+Base case: Since we have a positive integers, we use $n = 1$ and then plug it into formula to get: $1^3 + 2(1) = 3$, which is divisible by $3$. Hence the base case holds true.\\~\\
+So we assume that we have $n = k$ then for some integer $k$ we assume that $k^3 + 2k$ is divisible by three, so we must prove $(k+1)^3 + 2(k+1)$ is divisible by 3. Thus we simplify and get:
+
+\[=(k+1)^3 + 2(k+1)\]
+\[=(k+1)(k+1)(k+1) + 2k + 2\]
+\[=(k^2+2k+1)(k+1) + 2k+2\]
+\[=k^3 + k^2+2k^2+2k+k+1+2k+2\]
+\[=k^3+2k+3k^2+3k+3\]
+
+Then from using induction we know that $k^3 + 2k$ is divisible by three hence we can factor the equation in the form of:
+
+\[k^3+2k+3(k^2+k+1)\]
+
+And since we have both parts are divisible by three, the entire equation is divisible by three.
+
+\subsection*{b.}
+Let us assume that our base case is $n = 2$, then the factors of $n$ are: $1$, $2$. Which means that it is prime. Next we assume that for all $k \leq n$, $k$ can be either prime or a product of prime factors. So we have to show that $n + 1$ is prime or a product of primes.
+We assume that there are two numbers $a$ and $b$ such that $2 \leq a$ and $b \leq n$ and $ab = n + 1$. So if $n + 1$ is not a prime, then both $a$ and $b$ have to be prime or the product of some prime factors. We also know that in that case $ab$ will also be the product of prime factors. If numbers $ab$ do not exist than $n + 1$ must be prime itself, hence the proof holds and by the inductive method we've proved that $n + 1$ is either a prime or a product of prime factors.
+
+\pagebreak
+\section*{Q6.}
+\subsection*{a.}
+\subsubsection*{a.} 
+$P(3)$ is true because $1^2 + 2^2+3^2 = (3(3+1)((3 * 2) + 1))/6 = 14$.
+\subsubsection*{b.}
+$P(k)=\sum_{j=1}^{k}j^2=\frac{k(k+1)(2k+1)}{6}$
+\subsubsection*{c.}
+$P(k+1)=\sum_{j=1}^{k+1}j^2=\frac{k+1(k+1+1)(2(k+1)+1)}{6}$
+\subsubsection*{d.}
+Since this is for every positive integer the base case is $P(1)$ which evaluates out to $P(1) = \frac{6}{6} = 1$ which is true.
+\subsubsection*{e.}
+We need to prove in the inductive step that: $\sum_{j=1}^{k+1}j^2=\frac{(k+1)(k+1+1)(2(k+1)+1)}{6}$
+\subsubsection*{f.}
+The inductive hypothesis is: $P(k)=\sum_{j=1}^{k}j^2=\frac{(k+1)(2k+1)}{6}$
+\subsubsection*{g.}
+We proved our base case in part (d). Going on from there we know that our hypothesis from part(f), we must prove that our inductive step from part (e) works for any integer $k$. So going from that point we have:
+\[P(k+1)=\sum_{j=1}^{k+1}j^2=\frac{k(k+1)(2k+1)}{6} + (k+1)^2\] We can then simplify this down to:
+\[P(k+1)=\sum_{j=1}^{k+1}j^2=\frac{2k^3+9k^2+13k+6}{6}\] And we can also simplify our inductive step to the same, hence since they are equal, we can prove the statement via induction.
+\pagebreak
+\subsection*{b.}
+Prove that for $n \geq 1$: $\sum_{j=1}^{n}\frac{1}{j^2}\le2-\frac{1}{n}$.\\
+For the base case $n = 1$:\\
+\[f(1)=\frac{1}{1^2}\le2-\frac{1}{1}=1\leq 1\]which is true for our base case.\\
+Then for the inductive step we assume:
+\[\sum_{j=1}^{k}\frac{1}{j^2}\le2-\frac{1}{k}\]So we have to prove that:
+\[\sum_{j=1}^{k+1}\frac{1}{j^2}\le2-\frac{1}{k+1}\]
+Next with our initial assumption we add: $\frac{1}{(k+1)^2}$ to each side. So we end up with the following:
+\[\sum_{j=1}^{k}\frac{1}{j^2}+\frac{1}{{(k+1)}^2}\le2-\frac{1}{k+1}+\frac{1}{{(k+1)}^{2}}\le 2-\frac{k+2}{{(k+1)}^2}\]
+And for our prof step with the $k+1$ we get to the:
+\[2-\frac{1}{k+1}=2-\frac{k+1}{{(k+1)}^2}\]
+
+Lastly we simplify and end up with:
+\[-\frac{k+2}{{(k+1)}^2}\le-\frac{k+1}{{(k+1)}^2}\]
+And this is obviously true, because $-(k+2) \leq (-k+1)$. Thus we've proven our theorem.
+\pagebreak
+\subsection*{c.}
+Prove that for any positive integer $n$, $3^{2n}-1$ is divisible by $4$. So to prove this we have strong induction, first we start off with base case $n = 1$, thus our formula results in $3^{2(1)} - 1 = 8$ which is divisible by $4$. We need to use strong induction for any integer $j$ between $1$ and $k$, $3^{2k}-1$ is divisible by $4$, thus we have to prove that $3^{2(k+1)}-1$ is also evenly divisible by $4$.\\~\\
+So we have the following:
+\[=3^{2(k+1)}-1\]
+\[=3^{2k+2}-1\]
+\[=3^{2k}+3^2-1\]
+\[=3^{2k}+3^2-1+8-8\]
+\[=9(9^k-1)+8\]
+\[=9(3^{2k}-1)+8\]
+And since our assumption was that $3^{2k}-1$ is divisible by $4$, $9$ times that is also divisible by $4$ and since we add $8$ to that, it must remain divisible by $4$ thus we have proven it.
+
+\end{document}
