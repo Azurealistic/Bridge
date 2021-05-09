@@ -4,13 +4,8 @@ using namespace std;
 
 class Operand {
 public:
-	Operand* left;
-	Operand* right;
-
-	Operand() {
-		left = nullptr;
-		right = nullptr;
-	}
+	Operand* left = nullptr;
+	Operand* right = nullptr;
 };
 
 class OperandNode : public Operand {
