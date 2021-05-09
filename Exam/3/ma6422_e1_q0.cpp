@@ -17,18 +17,14 @@ class OperandNode : public Operand {
 public:
 	int data;
 
-	OperandNode(int d) : Operand(), data(d) {
-		d = data;
-	}
+	OperandNode(int d) : data(d) {}
 }; 
 
 class OperatorNode : public Operand {
 public:
 	char data;
 
-	OperatorNode(char d) : Operand(), data(d) {
-		d = data;
-	}
+	OperatorNode(char d) : data(d) {}
 }; 
 
 class ExpressionTree {
